@@ -1,0 +1,57 @@
+{
+  "mcpServers": {
+    "didier-queloz-ai": {
+      "command": "cargo",
+      "args": [
+        "run",
+        "--release",
+        "--quiet"
+      ],
+      "env": {
+        "RUST_LOG": "info",
+        "TITAN_PROTOCOL": "QUELOZ",
+        "TARGET_CHAIN": "Sui",
+        "FIPS_203_LEVEL": "ML-KEM-768",
+        "FIPS_204_LEVEL": "ML-DSA-65"
+      },
+      "tools": [
+        {
+          "name": "verify_didier_queloz_discovery",
+          "description": "Verifies core invariant principles: Co-discovered 51 Pegasi b via high-precision radial velocity doppler spectroscopy (2019 Physics Nobel)",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "input_data": {
+                "type": "string"
+              },
+              "precision_level": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "input_data"
+            ]
+          }
+        },
+        {
+          "name": "model_didier_queloz_telemetry",
+          "description": "Models high-assurance domain telemetry for Astrophysics & Exoplanetology",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "telemetry_vector": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              }
+            },
+            "required": [
+              "telemetry_vector"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
